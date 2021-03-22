@@ -1,15 +1,4 @@
-import hashlib
 from cryptography.fernet import Fernet
-
-# Generates a hash (sha256 algo) out of the given argument.
-def string_to_hash_func(string_to_hash):
-    string_encoded = string_to_hash.encode()
-
-    hash_container = hashlib.sha256()
-    hash_container.update(string_encoded)
-    hashed_string = hash_container.hexdigest()
-
-    return hashed_string
 
 # Ecrypts the first arguments using the second argument as the key.
 def fernet_info_encrypting(information_to_encrypt, fernet_key):
